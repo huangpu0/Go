@@ -2,37 +2,38 @@ package main // 声明只有可执行的包名为 main
 import (
 	"fmt"  // 引用的fmt包 mian 函数里面打印文本到标准输出
 	"math" // 运算等？
+	"unsafe"
 )
 
-/// ----------------------------------GO 强类型语言------------------------------
+/// ----------------------------------GO 强类型语言 SDK 1.16.3 ------------------------------
 
 /// func main() - main 是一个特殊的函数。整个程序就是从 main 函数开始运行的。main 函数必须放置在 main 包中。{ 和 } 分别表示 main 函数的开始和结束部分。
 func main() {
 
-	// day1 hello world
+	// day2 hello world
 	fmt.Println("Hello World")
 	fmt.Println("Hello World")
 
-	// day2 变量的声明使用
-	day2()
-
-	// day3 类型
+	// day3 变量的声明使用
 	day3()
+
+	// day4 类型
+	day4()
 
 }
 
-//mark: ---- 变量的声明使用
-func day2()  {
+//mark: ---- 变量的声明使用 See: https://studygolang.com/articles/11756
+func day3()  {
 
 	var age int = 1000
 	var new_age = 100 // 所命名的变量必须使用 否则报错, 系统会自动推导数据类型
-	fmt.Println("my name is",age,"new age is",new_age)
+	fmt.Println("\n my name is",age,"new age is",new_age)
 
 	var  width, height int = 100, 50 // 声明多个变量 不赋值的话、系统默认为'0'
-	print("width----------",width,"\nheight----------",height)
+	print("\n width----------",width,"\nheight----------",height)
 	width  = 2000
 	height = 500
-	print("\nnew width----------",width,"\nnew height----------",height)
+	print("\n new width----------",width,"\nnew height----------",height)
 
 	// 一个语句中声明不同类型的变量
 	var (
@@ -40,28 +41,102 @@ func day2()  {
 		name2 int    = 1000
 		name3 float32
 	)
-	fmt.Println("\nname1----",name1,"\nname2-----",name2,"\nname3------",name3)
+	fmt.Println("\n name1----",name1,"\nname2-----",name2,"\nname3------",name3)
 
 	// 简短声明
 	old_name, old_age := "limei", 29
-	fmt.Println("\n简短声明 名字---",old_name," 年龄---",old_age)
+	fmt.Println("\n 简短声明 名字---",old_name," 年龄---",old_age)
     old_name, old_age1 := "new_limei", 100
-	fmt.Println("\n一变一不变-简短声明 old-new-名字---",old_name," new-年龄---",old_age1)
+	fmt.Println("\n 一变一不变-简短声明 old-new-名字---",old_name," new-年龄---",old_age1)
 	old_name, old_age = "on--new_limei", 300
-	fmt.Println("\nchange--简短声明 old-new-名字---",old_name," new-年龄---",old_age1)
+	fmt.Println("\n change--简短声明 old-new-名字---",old_name," new-年龄---",old_age1)
 
     // 运算
     a, b := 145.8, 543.2
     c := math.Min(a,b)
-    fmt.Println("\na b 之间 min value is ", c)
+    fmt.Println("\n a b 之间 min value is ", c)
     c  = math.Max(a,b)
-	fmt.Println("\na b 之间 max value is ", c)
+	fmt.Println("\n a b 之间 max value is ", c)
 
 }
 
-//mark: ---- 类型
-func day3()  {
+//mark: ---- 类型 See: https://studygolang.com/articles/11869
+func day4()  {
+
+    // 支持的基本类型 bool, string
+    a := true
+    b := false
+    fmt.Println("\n a: ",a, " b: ",b)
+	c := a && b
+	fmt.Println("\n c: ",c)
+	d := a || b
+	fmt.Println("\n d:",d)
+
+	// string
+	first := "Naveen"
+    last  := "Ramanathan"
+	name  := first + " " + last
+	fmt.Println("\n My name is",name)
+
+	/* 数字类型 */
+
+	// 有符号整型
+	// int8 (-128 ~~ 127), int16 (-32768 ~~ 32767), int32 , int64, int
+	var  int_a int = 89
+	int_b := 95
+	fmt.Println("\n value of int_a is",int_a, "and int_b is ",int_b)
+	// int_a 的类型及大小 %T 用于打印类型，而 %d 用于打印字节大小
+	fmt.Println("\n type of int_a is %T, size of int_a is %d", int_a, unsafe.Sizeof(int_a))
+	// int_b 的类型和大小
+	fmt.Println("\n type of int_b is %T, size of int_b is %d", int_b, unsafe.Sizeof(int_b))
+
+	// 无符号整型
+	// unit8（0 ～ 255）, unit16 0 ～ 65535）, unit32, unit64, unit
 
 
+
+
+    // float32 （32 位浮点数）, float64 （64 位浮点数）
+    float_a, float_b := 5.67, 8.97
+    fmt.Println("\n type of float_a %T b %T\n",float_a,float_b)
+    sum  := float_a + float_b
+    diff := float_a - float_b
+    fmt.Println("\n float sum: ",sum," diff: ",diff)
+
+    no1, no2 := 56, 89
+    fmt.Println("\n int sum", no1 + no2, " diff: ", no1 - no2)
+
+
+	// complex64 （实部和虚部都是 'float32' 类型的复数）, complex128 （实部和虚部都是 'float64' 类型的复数）
+    c1   := complex(5, 7)
+    fmt.Println("\n c1: ",c1)
+    c2   := 8 + 27i
+	fmt.Println("\n c2: ",c2)
+    cadd := c1 + c2
+    fmt.Println("\n complex sum: ",cadd)
+    cmul := c1 * c2
+    fmt.Println("\n product: ",cmul)
+
+	// byte （uint8的别名）
+	// rune （int32的别名）
+
+
+    // ---------------------------- 类型转换 ----------------------------
+    i := 55     // int
+    j := 67.8   // float64
+    fmt.Println("\n i: ",i, "j: ",j)
+    /*
+    new_sum := i + j // 不允许 int + float64 (mismatched types int and float64)
+    fmt.Println("\n new_sum: ",new_sum)
+    */
+
+    new_sum := i + int(j) //j is converted to int
+    fmt.Println("\n new_sum: ",new_sum)
+
+    // i
+    new_i := 10
+	var new_j float64 = float64(new_i)
+	fmt.Println("\n new_j: ",new_j)
 
 }
+
