@@ -20,6 +20,12 @@ func main() {
 	// day4 类型
 	day4()
 
+	// day5 常量
+	day5()
+
+	// day6 函数
+	day6()
+
 }
 
 //mark: ---- 变量的声明使用 See: https://studygolang.com/articles/11756
@@ -140,3 +146,54 @@ func day4()  {
 
 }
 
+
+// mark: ---- 常量 See: https://studygolang.com/articles/11872
+func day5()  {
+
+	const a  int = 50 // 允许
+	// a = 89 // 不允许重新赋值 （关键字 const）
+	fmt.Println("\n a: ",a)
+	var  aaa = math.Sqrt(4) // 允许
+	fmt.Println("\n aaa value is ", aaa)
+	// const  bbb = math.Sqrt(4) // 不允许 (error: const initializer math.Sqrt(4) is not a constant)
+
+	// -------------------- 字符串常量 --------------------
+	const hello = "Hello World"
+	fmt.Println("\n hello is %T value is ", hello, hello)
+	var name = "Sam"
+	fmt.Println("\n type %T value %v", name, name)
+
+	// 带有类型的常量
+	const  typehell0 string = "Hello World"
+	fmt.Println("\n type is value is ",typehell0)
+
+	// -------------------- GO 强类型语言 分配过程中混合类型是不被允许的 --------------------
+	var defaultName = "Sam" // 允许
+	fmt.Println("\n defalutName is ",defaultName)
+	type myString string
+	var customName myString = "Sam" // 允许
+	fmt.Println("\n customeName is ",customName)
+    // customName = defaultName // 不允许 (error cannot use defaultName (type string) as type myString in assignment)
+
+    // -------------------- bool类型 --------------------
+    const trueConst = true
+	type myBool bool
+	var defaultBool = trueConst // 允许
+	fmt.Println("\n defaultBool is value ",defaultBool)
+	var customeBool myBool = trueConst // 允许
+	fmt.Println("\n customeBool is value ",customeBool)
+	// defaultBool = customeBool // 不允许 （error cannot use customeBool (type myBool) as type bool in assignment ）
+
+	// -------------------- 数字常量 --------------------
+	const aa = 5
+	var intVar int = aa
+	var int32Var int32 = aa
+	var float64Var float64 = aa
+	var complex64Var complex64 = aa
+	fmt.Println("\n intVar: ",intVar," int32Var: ",int32Var," float64Var: ",float64Var," complex64Var: ",complex64Var)
+
+	// -------------------- 数字表达式 --------------------
+	var new_a = 5.9/8
+	fmt.Println("\n new_a type %T value %v ",new_a, new_a)
+
+}
