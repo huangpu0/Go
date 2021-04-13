@@ -26,9 +26,22 @@ func main() {
 	// day6 函数
 	day6()
 
+    // day7 包
+    day7()
+
+    // day8 if-else语句
+    day8()
+
+	// day9 循环
+	day9()
+
+	// day10 switch语句
+	day10()
+
+
 }
 
-//mark: ---- 变量的声明使用 See: https://studygolang.com/articles/11756
+// TODO: ---- 变量的声明使用 See: https://studygolang.com/articles/11756
 func day3()  {
 
 	var age int = 1000
@@ -66,7 +79,7 @@ func day3()  {
 
 }
 
-//mark: ---- 类型 See: https://studygolang.com/articles/11869
+// TODO: ---- 类型 See: https://studygolang.com/articles/11869
 func day4()  {
 
     // 支持的基本类型 bool, string
@@ -147,7 +160,7 @@ func day4()  {
 }
 
 
-// mark: ---- 常量 See: https://studygolang.com/articles/11872
+// TODO: ---- 常量 See: https://studygolang.com/articles/11872
 func day5()  {
 
 	const a  int = 50 // 允许
