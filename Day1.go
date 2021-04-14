@@ -15,28 +15,31 @@ func main() {
 	fmt.Println("Hello World")
 
 	// day3 变量的声明使用
-	day3()
+	//day3()
 
 	// day4 类型
-	day4()
+	//day4()
 
 	// day5 常量
-	day5()
+	//day5()
 
 	// day6 函数
-	day6()
+	//day6()
 
     // day7 包
-    day7()
+    //day7()
 
     // day8 if-else语句
-    day8()
+    //day8()
 
 	// day9 循环
-	day9()
+	//day9()
 
 	// day10 switch语句
-	day10()
+	//day10()
+
+    // day11 数组与切片
+    day11()
 
 
 }
@@ -140,7 +143,7 @@ func day4()  {
 	// rune （int32的别名）
 
 
-    // ---------------------------- 类型转换 ----------------------------
+    // TODO: ---------------------------- 类型转换 ----------------------------
     i := 55     // int
     j := 67.8   // float64
     fmt.Println("\n i: ",i, "j: ",j)
@@ -170,7 +173,7 @@ func day5()  {
 	fmt.Println("\n aaa value is ", aaa)
 	// const  bbb = math.Sqrt(4) // 不允许 (error: const initializer math.Sqrt(4) is not a constant)
 
-	// -------------------- 字符串常量 --------------------
+	// TODO: -------------------- 字符串常量 --------------------
 	const hello = "Hello World"
 	fmt.Println("\n hello is %T value is ", hello, hello)
 	var name = "Sam"
@@ -180,7 +183,7 @@ func day5()  {
 	const  typehell0 string = "Hello World"
 	fmt.Println("\n type is value is ",typehell0)
 
-	// -------------------- GO 强类型语言 分配过程中混合类型是不被允许的 --------------------
+	// TODO: -------------------- GO 强类型语言 分配过程中混合类型是不被允许的 --------------------
 	var defaultName = "Sam" // 允许
 	fmt.Println("\n defalutName is ",defaultName)
 	type myString string
@@ -188,7 +191,7 @@ func day5()  {
 	fmt.Println("\n customeName is ",customName)
     // customName = defaultName // 不允许 (error cannot use defaultName (type string) as type myString in assignment)
 
-    // -------------------- bool类型 --------------------
+    // TODO: -------------------- bool类型 --------------------
     const trueConst = true
 	type myBool bool
 	var defaultBool = trueConst // 允许
@@ -197,7 +200,7 @@ func day5()  {
 	fmt.Println("\n customeBool is value ",customeBool)
 	// defaultBool = customeBool // 不允许 （error cannot use customeBool (type myBool) as type bool in assignment ）
 
-	// -------------------- 数字常量 --------------------
+	// TODO: -------------------- 数字常量 --------------------
 	const aa = 5
 	var intVar int = aa
 	var int32Var int32 = aa
@@ -205,7 +208,7 @@ func day5()  {
 	var complex64Var complex64 = aa
 	fmt.Println("\n intVar: ",intVar," int32Var: ",int32Var," float64Var: ",float64Var," complex64Var: ",complex64Var)
 
-	// -------------------- 数字表达式 --------------------
+	// TODO: -------------------- 数字表达式 --------------------
 	var new_a = 5.9/8
 	fmt.Println("\n new_a type %T value %v ",new_a, new_a)
 

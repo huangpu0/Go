@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	fmt "fmt"
 )
 
 // TODO: ----  if-else 语句 See: https://studygolang.com/articles/11902
@@ -116,7 +116,7 @@ func day10()  {
 		fmt.Println("\n num is greater than 100")
 	}
 
-	// Fallthrough 语句 (失败之后的处理？)
+	// TODO: Fallthrough 语句 (失败之后的处理？)
     /*
       在 Go 中，每执行完一个 case 后，会从 switch 语句中跳出来，不再做后续 case 的判断和执行。
       使用 fallthrough 语句可以在已经执行完成的 case 之后，把控制权转移到下一个 case 的执行代码中。
@@ -139,4 +139,124 @@ func day10()  {
 func number() int {
 	num := 15 * 5
 	return num
+}
+
+
+// TODO: ----  数组和切片 See: https://studygolang.com/articles/12121
+func day11()  {
+
+	var a [3]int // int array with length 3
+	fmt.Println("\n ", a)
+	a[0] = 12
+	a[1] = 78
+	a[2] = 50
+	fmt.Println("\n new value", a) // [12,78,50]
+
+	b := [3]int{12, 78, 50} // short hand declaration to creat array
+	fmt.Println("\n new other value ", b) // [12 78 50]
+
+	a = [3]int{12}
+	fmt.Println("\n other value ", a) // [12,0,0]
+
+	b = [...]int{12, 78, 50} // ... makes the complier determine the length
+	fmt.Println("\n b new value ", b) // [12 78 50]
+
+
+	/*
+	 not possible since [3]int and [5]int are distinct types
+	 var  c [5]int
+	 b = c
+    */
+	new_a := [...]string{"USA", "China", "India", "Germany", "France"}
+    new_b := new_a // new_a copy of new_a is assigned to new_b
+    new_b[0] = "Singapore"
+    fmt.Println("\n new_a is ", new_a) // [USA China India Germany France]
+	fmt.Println("\n new_b is ", new_b) // [Singapore China India Germany France]
+
+	num := [...]int{5, 6, 7, 8, 8}
+	fmt.Println("\n befor passing to function ", num) // [5 6 7 8 8]
+	changeLocal(num) // num is passed by value
+	// 数组 num 实际上是通过值传递给函数 changeLocal，数组不会因为函数调用而改变。这个程序将输出
+	fmt.Println("\n after passing to function ", num, "lenth is ", len(num) ) // [5 6 7 8 8] 长度为 5
+
+    // TODO: ---------------------------------------------- 使用range迭代数组 ----------------------------------------------
+    c  := [...]float64{67.7, 89.8, 21, 78}
+	for i := 0; i < len(a); i ++ { // looping from 0 to the length of the array
+		fmt.Printf("\n %d the element of is %.2f \n\n", i, c[i]) // 0 67.70
+	}
+	// 通过使用 for 循环的 range 方法来遍历数组。range 返回索引和该索引处的值
+	new_c := [...]float64{67.7, 89.8, 21, 78}
+	sum := float64(0)
+	for new_i, new_v := range new_c { // range returns both the index and value
+		fmt.Printf("\n %d the element of is %.2f \n\n", new_i, new_v) // 0 67.70
+		sum += new_v
+	}
+    fmt.Println("\n sum of all elements of new_c ", sum)
+	// 你只需要值并希望忽略索引，则可以通过用 _ 空白标识符替换索引来执行。
+    for _, v := range new_c { // ignores index
+    	fmt.Println("\n ", v)
+	}
+
+
+	// TODO: ---------------------------------------------- 多维数组 ----------------------------------------------
+    new_str := [3][2]string{
+    	{"lion", "tiger"},
+	    {"cat",  "dog"},
+	    {"pigeon", "peacock"}, // this comma is necessary. The compiler will complain if you omit this comma
+    }
+    printarray(new_str)
+
+	var new_str1 [3][2]string
+    new_str1[0][0] = "apple"
+	new_str1[0][1] = "samsung"
+	new_str1[1][0] = "microsoft"
+	new_str1[1][1] = "google"
+	new_str1[2][0] = "AT&T"
+	new_str1[2][1] = "T-Mobile"
+	fmt.Printf("\n")
+	printarray(new_str1)
+
+
+	// TODO: ---------------------------------------------- 切片 ----------------------------------------------
+
+	// 创建一个切片 --- 带有 T 类型元素的切片由 []T 表示 本身不拥有数据，只是对现有数组的引用
+    qie_a := [5]int{76, 77, 78, 79, 80}
+	var  qie_b []int = qie_a[1:4] // creat a slice from qie_a[1] to qie_a[3]
+	fmt.Println("\n qie_b value is", qie_b) // [77 78 79]
+	new_cc := []int{6, 7, 8} // creates and array and returns a slice reference
+	fmt.Println("\n new_cc value is ", new_cc) //  [6 7 8]
+
+    /// 切片的修改 (切片自己不拥有任何数据。它只是底层数组的一种表示。对切片所做的任何修改都会反映在底层数组中。)
+    darr := [...]int{57, 89, 90, 82, 100, 78, 67, 69, 59}
+    dslice := darr[2:5]
+    fmt.Println("\n array before", darr) // [57 89 90 82 100 78 67 69 59]
+	for i := range dslice {
+		dslice[i]++
+	}
+	fmt.Println("\n array after ", darr) //  [57 89 91 83 101 78 67 69 59]
+	numa := [3]int{78, 79, 80}
+	nums1 := numa[:] // creat a slice which contains all elements of the array
+	nums2 := numa[:]
+	fmt.Println("\n array before change 1", numa) // [78 79 80]
+	nums1[0] = 100
+	fmt.Println("\n array after modification to slice nums1", numa) // 100 79 80]
+	nums2[1] = 101
+	fmt.Println("\n array after modification to slice nums2", numa) // [100 101 80]
+
+
+}
+
+func changeLocal( num [5]int)  {
+	num[0] = 55
+	fmt.Println("\n isside function ", num) // [55 6 7 8 8]
+}
+
+// 多维数组
+func printarray(a [3][2]string)  {
+	for _, v1 := range a {
+		for _, v2 := range v1 {
+			fmt.Println("\n %s", v2)
+		}
+		fmt.Println("\n")
+	}
 }
