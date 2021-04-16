@@ -42,7 +42,13 @@ func main() {
 	//day11()
 
 	// day12 可变参数函数
-	day12()
+	//day12()
+
+	// day13 Maps
+	//day13()
+
+    // day14 字符串
+    day14()
 
 }
 
