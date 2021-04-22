@@ -216,3 +216,62 @@ func printCharsAndBytes(s string) {
 		fmt.Printf("\n %c starts at byte %d\n", rune, index)
 	}
 }
+
+
+
+// TODO: ---- 指针 See: https://studygolang.com/articles/12262
+func day15()  {
+
+	// 指针变量的类型为 *T，该指针指向一个 T 类型的变量。
+	b := 255
+	var a *int = &b
+	fmt.Println("\n Type of is %T\n", a)
+	fmt.Println("\n address of b is", a)
+
+	var c *int
+	if c == nil {
+		fmt.Println("\n c is", c)
+		c = &b
+		fmt.Println("\n c after initialization  is", c) // c value '0x1040a124'
+	}
+
+    *a++
+    fmt.Println("\n new value of a is ", a)
+
+    new_a := 58
+    fmt.Println("\n vaule of a before value is ", new_a) // 58
+    new_b := &new_a
+    day15change(new_b)
+    fmt.Println("\n vaule of a after function call is ", new_a) // 55
+
+	// ----------------------------- 不要向函数传递数组的指针，而应该使用切片 -----------------------------
+    arr_a := [3]int{89, 90, 91}
+    modify(&arr_a)
+    fmt.Println("\n arr_a value is ", arr_a) // 90, 90, 91
+    new_modify(arr_a[:])
+    fmt.Println("\n new value is ", arr_a) // 90, 90, 91
+
+
+	// ----------------------------- GO, 不支持指针运算 -----------------------------
+	/*
+	   // error !!! invalid operation: new_pp++ (non-numeric type *[3]int)
+	   new_bb := [...]int{109, 110, 111}
+	   new_pp := &new_bb
+	   new_pp++
+	   fmt.Println("\n new_pp value is ", new_pp)
+	*/
+
+}
+
+// 切片重写
+func new_modify(sls []int)  {
+	sls[0] = 90
+}
+
+func modify(arr *[3]int)  {
+	arr[0] = 90
+}
+
+func day15change(val *int)  {
+	*val = 55
+}

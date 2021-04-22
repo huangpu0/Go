@@ -48,7 +48,10 @@ func main() {
 	//day13()
 
     // day14 字符串
-    day14()
+    //day14()
+
+	// day15 指针
+	day15()
 
 }
 
