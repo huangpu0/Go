@@ -51,7 +51,10 @@ func main() {
     //day14()
 
 	// day15 指针
-	day15()
+	//day15()
+
+	// day16 结构体
+	day16()
 
 }
 
