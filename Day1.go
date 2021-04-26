@@ -11,8 +11,8 @@ import (
 func main() {
 
 	// day2 hello world
-	fmt.Println("Hello World")
-	fmt.Println("Hello World")
+	fmt.Println(" Hello World")
+	fmt.Println(" Hello World")
 
 	// day3 变量的声明使用
 	//day3()
@@ -54,7 +54,10 @@ func main() {
 	//day15()
 
 	// day16 结构体
-	day16()
+	//day16()
+
+	// day17 方法
+	day17()
 
 }
 
