@@ -57,7 +57,10 @@ func main() {
 	//day16()
 
 	// day17 方法
-	day17()
+	//day17()
+
+	// day18 接口（1）
+	day18()
 
 }
 
