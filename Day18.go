@@ -130,7 +130,55 @@ func new_findType(i interface{}) {
 	}
 }
 
-func day18() {
+
+// TODO: --------------------------------- 实现接口：指针接受者与值接受者 ---------------------------------
+type New_Address struct {
+	state   string
+	country string
+}
+func (a *New_Address) Describe() { // 使用指针接受者实现
+	fmt.Printf("\n State %s Country %s", a.state, a.country)
+}
+
+
+// TODO: --------------------------------- 实现多个接口 ---------------------------------
+type New_SalaryCalculator interface {
+	New_DisplaySalary()
+}
+
+type New_LeaveCalculator interface {
+	New_CalculateLeavesLeft() int
+}
+
+type New_Employee struct {
+	firstName string
+	lastName string
+	basicPay int
+	pf int
+	totalLeaves int
+	leavesTaken int
+}
+
+func (e New_Employee)New_DisplaySalary()  {
+	fmt.Printf("\n %s %s has salary $%d", e.firstName, e.lastName, (e.basicPay + e.pf))
+}
+
+func (e New_Employee)New_CalculateLeavesLeft() int {
+	return e.totalLeaves - e.leavesTaken
+}
+
+// TODO: --------------------------------- 接口的嵌套 ---------------------------------
+type New_EmployeeOperations interface {
+	New_SalaryCalculator
+	New_LeaveCalculator
+}
+
+// TODO: --------------------------------- 接口的零值 ---------------------------------
+type New_Describer interface {
+	New_Describer()
+}
+
+func day18_19() {
 
 	/// 接口的声明与实现
 	name := MyString("Sam Anderson")
@@ -181,5 +229,63 @@ func day18() {
 		age: 25,
 	}
 	new_findType(p)
+
+	/// (接口2) ------- 实现接口：指针接受者与值接受者
+	var d1 Describer
+	p1 := NEW_Person{"Sam",25}
+	d1 = p1
+	d1.Describe()
+	p2 := NEW_Person{"James", 32}
+	d1 = &p2
+	d1.Describe()
+
+	var d2 Describer
+	a := New_Address{"Washington", "USA"}
+
+	/* 如果下面一行取消注释会导致编译错误：
+	   cannot use a (type Address) as type Describer
+	   in assignment: Address does not implement
+	   Describer (Describe method has pointer
+	   receiver)
+	*/
+	//d2 = a
+
+	d2 = &a // 这是合法的 New_Address 类型的指针实现了 Describer 接口
+	d2.Describe()
+
+
+	/// 实现多个接口
+	e := New_Employee{
+		firstName: "Naveen",
+		lastName: "Ramanathan",
+		basicPay: 5000,
+		pf: 200,
+		totalLeaves: 30,
+		leavesTaken: 5,
+	}
+	var new_s1 New_SalaryCalculator = e
+	new_s1.New_DisplaySalary()
+	var new_l New_LeaveCalculator = e
+	fmt.Printf("\n Leaves left =", new_l.New_CalculateLeavesLeft()) //  Leaves left =%!(EXTRA int=25)
+
+    /// 接口的嵌套
+    var empOp New_EmployeeOperations = e
+    empOp.New_DisplaySalary()
+    fmt.Printf("\n Leaves left =", empOp.New_CalculateLeavesLeft()) // Leaves left =%!(EXTRA int=25)
+
+
+    /// 接口的零值
+	var new_d1 New_Describer
+	if new_d1 == nil {
+		fmt.Printf("\n new_d1 is nil and has type %T value %v\n", new_d1, new_d1)
+	}
+	/*
+	error!!!
+	panic: runtime error: invalid memory address or nil pointer dereference
+	[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x10a60ee]
+
+	new_d1.New_Describer()
+    */
+
 
 }
