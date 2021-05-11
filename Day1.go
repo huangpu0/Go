@@ -63,10 +63,13 @@ func main() {
 	//day18_19()
 
 	// day21 Go协程
-	day21()
+	//day21()
 
 	// day22 信道
-	day22()
+	//day22()
+
+	// day23 缓存信道和工作池
+	day23()
 
 }
 
