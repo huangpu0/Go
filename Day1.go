@@ -69,7 +69,13 @@ func main() {
 	//day22()
 
 	// day23 缓存信道和工作池
-	day23()
+	//day23()
+
+	// day24 Select
+	//day24()
+
+	// day25 Mutex
+	day25()
 
 }
 
