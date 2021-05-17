@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// TODO: ---- 多态 See: https://studygolang.com/articles/12598
+// TODO: ---- 28、多态 See: https://studygolang.com/articles/12598
 
 /// 使用接口实现多态
 type Income28 interface {

@@ -5,7 +5,7 @@ import (
 	"unicode/utf8"
 )
 
-// TODO: ----  可变参数函数 See: https://studygolang.com/articles/12173
+// TODO: ----  12、可变参数函数 See: https://studygolang.com/articles/12173
 func day12() {
 
 	find(89, 89, 90, 95)
@@ -50,7 +50,7 @@ func change(s ...string) {
 
 
 
-// TODO: ----  Maps See: https://studygolang.com/articles/12251
+// TODO: ----  13、Maps See: https://studygolang.com/articles/12251
 func day13()  {
 
 	// diction? key:value?
@@ -130,7 +130,7 @@ func day13()  {
 }
 
 
-// TODO: ---- 字符串 See: https://studygolang.com/articles/12261
+// TODO: ---- 14、字符串 See: https://studygolang.com/articles/12261
 func day14()  {
 
 	name := "Hello World"
@@ -219,7 +219,7 @@ func printCharsAndBytes(s string) {
 
 
 
-// TODO: ---- 指针 See: https://studygolang.com/articles/12262
+// TODO: ---- 15、指针 See: https://studygolang.com/articles/12262
 func day15()  {
 
 	// 指针变量的类型为 *T，该指针指向一个 T 类型的变量。

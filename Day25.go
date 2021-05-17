@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-// TODO: ---- Mutex See: https://studygolang.com/articles/12598
+// TODO: ---- 25、Mutex See: https://studygolang.com/articles/12598
 
 /// 含有竞态条件的程序
 var x = 0
@@ -64,7 +64,7 @@ func day25()  {
 }
 
 
-// TODO: ----  结构体取代类 See: https://studygolang.com/articles/12630
+// TODO: ----  26、结构体取代类 See: https://studygolang.com/articles/12630
 
 /// Go 不支持类，而是提供了结构体。结构体中可以添加方法。结构体取代类 (新建文件夹opp/NewEmployee/NewEmployee.go)
 /// 包的导入
@@ -76,7 +76,7 @@ func day26()  {
 }
 
 
-// TODO: ----  组合取代继承 See: https://studygolang.com/articles/12680
+// TODO: ----  27、组合取代继承 See: https://studygolang.com/articles/12680
 
 /// 通过嵌套结构体进行组合
 type author27 struct {

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// TODO: ---- 接口（一） See: https://studygolang.com/articles/12266
+// TODO: ---- 18、接口（一） See: https://studygolang.com/articles/12266
 
 // --------------------------------- 接口的声明与实现 ---------------------------------
 type VowelsFinder interface {

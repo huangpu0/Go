@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-// TODO: ---- Go协程 See: https://studygolang.com/articles/12342
+// TODO: ---- 21、Go协程 See: https://studygolang.com/articles/12342
 
 /// 启动一个Go协程
 func hello()  {
@@ -59,7 +59,7 @@ func day21()  {
 }
 
 
-// TODO: ---- 信道 See: https://studygolang.com/articles/12402
+// TODO: ---- 22、信道 See: https://studygolang.com/articles/12402
 
 /// 用信道重写上述代码
 func new_hello(done chan bool) {

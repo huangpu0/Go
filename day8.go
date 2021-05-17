@@ -4,7 +4,7 @@ import (
 	fmt "fmt"
 )
 
-// TODO: ----  if-else 语句 See: https://studygolang.com/articles/11902
+// TODO: ----  8、if-else 语句 See: https://studygolang.com/articles/11902
 func day8() {
 
 	num := 10
@@ -31,7 +31,7 @@ func day8() {
 
 }
 
-// TODO: ----  循环 See: https://studygolang.com/articles/11924
+// TODO: ----  9、循环 See: https://studygolang.com/articles/11924
 func day9() {
 
 	// break
@@ -75,7 +75,7 @@ func day9() {
 
 }
 
-// TODO: ----  switch 语句 See: https://studygolang.com/articles/11957
+// TODO: ----  10、switch 语句 See: https://studygolang.com/articles/11957
 func day10() {
 
 	finger := 4
@@ -139,7 +139,7 @@ func number() int {
 	return num
 }
 
-// TODO: ----  数组和切片 See: https://studygolang.com/articles/12121
+// TODO: ----  11、数组和切片 See: https://studygolang.com/articles/12121
 func day11() {
 
 	var a [3]int // int array with length 3

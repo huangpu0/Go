@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// TODO: ---- 结构体 See: https://studygolang.com/articles/12263
+// TODO: ---- 16、结构体 See: https://studygolang.com/articles/12263
 
 // 声明
 type Employee struct {
@@ -157,7 +157,7 @@ func day16()  {
 
 
 
-// TODO: ---- 方法 See: https://studygolang.com/articles/12264
+// TODO: ---- 17、方法 See: https://studygolang.com/articles/12264
 func day17()  {
 
 	emp1 := Employee{

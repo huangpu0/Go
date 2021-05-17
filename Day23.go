@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// TODO: ---- 缓冲信道和工作池 See: https://studygolang.com/articles/12512
+// TODO: ---- 23、缓冲信道和工作池 See: https://studygolang.com/articles/12512
 
 func write(ch chan int)  {
 
@@ -148,7 +148,7 @@ func day23()  {
 }
 
 
-// TODO: ---- Select See: https://studygolang.com/articles/12522
+// TODO: ---- 24、Select See: https://studygolang.com/articles/12522
 
 /*
   select 语句用于在多个发送/接收信道操作中进行选择。

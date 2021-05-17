@@ -88,7 +88,7 @@ func main() {
 
 }
 
-// TODO: ---- 变量的声明使用 See: https://studygolang.com/articles/11756
+// TODO: ---- 3、变量的声明使用 See: https://studygolang.com/articles/11756
 func day3() {
 
 	var age int = 1000
@@ -126,7 +126,7 @@ func day3() {
 
 }
 
-// TODO: ---- 类型 See: https://studygolang.com/articles/11869
+// TODO: ---- 4、类型 See: https://studygolang.com/articles/11869
 func day4() {
 
 	// 支持的基本类型 bool, string
@@ -201,7 +201,7 @@ func day4() {
 
 }
 
-// TODO: ---- 常量 See: https://studygolang.com/articles/11872
+// TODO: ---- 5、常量 See: https://studygolang.com/articles/11872
 func day5() {
 
 	const a int = 50 // 允许

@@ -5,7 +5,7 @@ import (
 )
 
 
-// TODO: ---- 函数 See: https://studygolang.com/articles/11892
+// TODO: ---- 6、函数 See: https://studygolang.com/articles/11892
 func day6()  {
 
 
@@ -52,7 +52,7 @@ func new_rectProps(length, width float64)(area, perimeter float64) {
 }
 
 
-// TODO: ---- 包 See: https://studygolang.com/articles/11893
+// TODO: ---- 7、包 See: https://studygolang.com/articles/11893
 /*
    到目前为止，我们看到的 Go 程序都只有一个文件，文件里包含一个 main 函数和几个其他的函数。
    在实际中，这种把所有源代码编写在一个文件的方法并不好用。
