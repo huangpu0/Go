@@ -75,7 +75,16 @@ func main() {
 	//day24()
 
 	// day25 Mutex
-	day25()
+	//day25()
+
+    // day26 结构体取代类
+    //day26()
+
+	// day27 组合取代继承
+	//day27()
+
+	// day28 多态
+	day28()
 
 }
 
