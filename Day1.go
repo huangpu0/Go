@@ -84,7 +84,16 @@ func main() {
 	//day27()
 
 	// day28 多态
-	day28()
+	//day28()
+
+	// day29 Defer
+	//day29()
+
+	// day30 错误处理
+	//day30()
+
+	// day31 自定义错误
+    day31()
 
 }
 
