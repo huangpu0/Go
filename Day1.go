@@ -93,7 +93,16 @@ func main() {
 	//day30()
 
 	// day31 自定义错误
-    day31()
+    //day31()
+
+	// day32 panic 和 recover
+	//day32()
+
+	// day33 函数是一等公民（头等函数）
+	//day33()
+
+	// day34 反射
+	day34()
 
 }
 
