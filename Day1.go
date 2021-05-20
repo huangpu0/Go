@@ -102,7 +102,13 @@ func main() {
 	//day33()
 
 	// day34 反射
-	day34()
+	//day34()
+
+	// day35 读取文件
+	day35()
+
+	// day36 写入文件
+	//day36()
 
 }
 
@@ -115,7 +121,7 @@ func day3() {
 
 	var width, height int = 100, 50 // 声明多个变量 不赋值的话、系统默认为'0'
 	print("\n width----------", width, "\nheight----------", height)
-	width = 2000
+	width  = 2000
 	height = 500
 	print("\n new width----------", width, "\nnew height----------", height)
 
