@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"ios" // 自定义的包
 )
 
 
@@ -57,12 +58,13 @@ func new_rectProps(length, width float64)(area, perimeter float64) {
    到目前为止，我们看到的 Go 程序都只有一个文件，文件里包含一个 main 函数和几个其他的函数。
    在实际中，这种把所有源代码编写在一个文件的方法并不好用。
    以这种方式编写，代码的重用和维护都会很困难。而包（Package）解决了这样的问题。
+   !!!!! 自定义包 命名'ios' func供外界调用 首字母需 大写
  */
 
 func day7()  {
 
 	var rectLen, rectWdth float64 = 6, 7
-	fmt.Println("Geometrical shape properties", rectLen, rectWdth)
+	fmt.Println(" iOS NewMenthod Value is ", ios.NewMenthod(rectLen, rectWdth)) // 42
 	/*Area function of rectangle package used*/
 	//fmt.Println("area of rectangle %.2f\n", rectangle.Area(rectLen, rectWdth))
 

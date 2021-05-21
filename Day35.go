@@ -24,7 +24,7 @@ func day35()  {
 	fmt.Println(" Contents of file:", string(data1))
 
 	/// 2、使用命令行标记来传递文件路径
-	fptr := flag.String("fpath", "test.txt", "file path to read from")
+	fptr := flag.String("fpath", "ios.txt", "file path to read from")
 	flag.Parse()
 	fmt.Println(" value of fpath is", *fptr)
 	data2, err2 := ioutil.ReadFile(*fptr)
